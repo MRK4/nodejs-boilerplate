@@ -37,12 +37,36 @@ This line is really important, it must be secret !
 
 ## ⚙️ How to use it
 
-### Start the server
+Do not forget the `npm install` :)
+
+### Start everything in one command
+
+This is perfect for simultaneous Front-End and Back-End development
 
 Simply use
 
 ```
-node .\server.js
+npm run dev
+```
+
+A new browser should open, now you can write your code and the windows will refresh without doing anything !
+
+### Only launch Front-End
+
+Open an new terminal and write:
+
+```
+npm run watch
+```
+
+You should have a new browser, same as abobe you don't have to F5 to see the modifications that you make.
+
+### Only launch Back-End
+
+Open an new terminal and write:
+
+```
+npm run dev
 ```
 
 or
@@ -54,14 +78,16 @@ nodemon .\server.js
 or
 
 ```
-npm run start .\server.js
+node .\server.js
 ```
 
-If you have any problem, be sure to install the packages with `npm install`
+### Build command
 
-### Open in browser
+```
+npm run build
+```
 
-Open your browser and type:
+## 🚧 Routes
 
 Register page: `localhost:9999`
 

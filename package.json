@@ -4,8 +4,10 @@
   "description": "A simple nodejs boilerplate",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "build": "postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css",
+    "dev": "concurrently \"node server.js\" \"postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch\" \"live-server static\"",
+    "watch": "concurrently \"postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch\" \"live-server static\"",
+    "serve": "nodemon server.js"
   },
   "keywords": [
     "nodejs",
@@ -14,11 +16,16 @@
   "author": "MRK4",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.1.0",
+    "autoprefixer": "^10.4.7",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
+    "concurrently": "^7.2.2",
+    "dotenv": "^8.1.0",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.4.1"
+    "mongoose": "^6.4.1",
+    "nodemon": "^2.0.18",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.4"
   }
 }
