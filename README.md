@@ -1,8 +1,17 @@
 # NodeJS Boilerplate
 
-A simple NodeJS boilerplate in order to make it easy to create a website with login, register and cahnge password page !
+A simple NodeJS boilerplate in order to make it easy to create a website with login, register and change password page !
+
+## Requirements
+
+For this boilerplate, you'll need to install [MongoDB Community Server](https://www.mongodb.com/try/download/community).
+_Make sure MongoDB is launched when you're working on this._
+
+I recommend you to use Visual Studio Code.
 
 ## 🚀 Installation
+
+### Clone and Install
 
 Simply open a terminal and:
 
@@ -15,7 +24,11 @@ After that, install the packages with:
 npm install
 ```
 
+### Creating and editing the .env file
+
 Once it's done, copy the `.env.example` file and name it `.env`.
+
+#### Password Hash
 
 In order to hash the passwords, you will need to change the line in the file by whatever you want,
 
@@ -34,6 +47,25 @@ JWT_SECRET=4z{*KC~!mPHrXag&7tS[$L7?:7P}h9[Mhm]WNwyXt+n<]N#<+Y
 ```
 
 This line is really important, it must be secret !
+
+#### Change the MongoDB URL
+
+You'll have this line:
+
+```
+MONGODB_URL=mongodb://localhost:27017/name-of-your-project
+```
+
+Simply change `name-of-your-project` by the name of your project, Mongo will create it automatically !
+
+#### Changing the Ports
+
+You'll have this line:
+```
+PORTS=9999
+```
+
+If there's any problem with thath, you can change `9999` by whatever you want.
 
 ## ⚙️ How to use it
 

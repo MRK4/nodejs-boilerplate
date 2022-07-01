@@ -12,7 +12,7 @@ const  JWT_SECRET = process.env.JWT_SECRET
 
 
 // Connexion à la BDD
-mongoose.connect('mongodb://localhost:27017/boiler-platedatabase')
+mongoose.connect(process.env.MONGODB_URL)
 
 
 const app = express()
@@ -128,6 +128,6 @@ app.post('/api/register', async (req, res) => {
 
 
 
-app.listen(9999, () => {
+app.listen(process.env.PORTS, () => {
     console.log('Server up at 9999')
 })
