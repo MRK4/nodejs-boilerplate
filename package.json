@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "build": "postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css",
-    "dev": "concurrently \"node server.js\" \"postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch\" \"live-server static\"",
-    "watch": "concurrently \"postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch\" \"live-server static\"",
+    "dev": "concurrently \"node server.js\" \"postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch\"",
+    "watch": "postcss ./static/src/styles/tailwind.css -o ./static/build/styles/output.css --watch",
     "serve": "nodemon server.js"
   },
   "keywords": [
@@ -23,6 +23,7 @@
     "dotenv": "^8.1.0",
     "express": "^4.18.1",
     "jsonwebtoken": "^8.5.1",
+    "live-server": "^1.2.2",
     "mongoose": "^6.4.1",
     "nodemon": "^2.0.18",
     "postcss-cli": "^10.0.0",

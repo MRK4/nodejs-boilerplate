@@ -123,9 +123,9 @@ npm run build
 
 Register page: `localhost:9999`
 
-Login page: `localhost:9999/login`
+Login page: `localhost:9999/login.html`
 
-Change password page: `localhost:9999/change-password`
+Change password page: `localhost:9999/change-password.html`
 
 _If you changed the default ports, change `9999` by the ports you have chosen._
 
