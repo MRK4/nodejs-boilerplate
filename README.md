@@ -4,7 +4,8 @@ A simple NodeJS boilerplate in order to make it easy to create a website with lo
 
 ## Requirements
 
-For this boilerplate, you'll need to install [MongoDB Community Server](https://www.mongodb.com/try/download/community).
+- [NodeJS](https://nodejs.org/en/)
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community). 
 _Make sure MongoDB is launched when you're working on this._
 
 I recommend you to use Visual Studio Code.
@@ -123,9 +124,9 @@ npm run build
 
 Register page: `localhost:9999`
 
-Login page: `localhost:9999/login`
+Login page: `localhost:9999/login.html`
 
-Change password page: `localhost:9999/change-password`
+Change password page: `localhost:9999/change-password.html`
 
 _If you changed the default ports, change `9999` by the ports you have chosen._
 

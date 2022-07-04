@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken')
 
 const User = require('./model/user')
 
-const  JWT_SECRET = process.env.JWT_SECRET
+const JWT_SECRET = process.env.JWT_SECRET
 
 
 // Connexion à la BDD
@@ -57,17 +57,26 @@ app.post('/api/change-password', async (req, res) => {
 
 })
 
+
+
 app.post('/api/login', async (req, res) => {
 
     const { username, password } = req.body
 
-    const user = User.findOne({ username }).lean()
+    const user = await User.findOne({ username }).lean()
+
+    // TODO
+    // if(isDef(user)){
+    //     return res.json({ status: 'error', error: 'Invalid username/password' })
+    // }
 
     if(!user){
         return res.json({ status: 'error', error: 'Invalid username/password' })
     }
 
-    if(await bcrypt.compare(password, user.password)){
+    const isPasswordValid = await bcrypt.compare(password, user.password)
+
+    if(isPasswordValid){
         // username et password donnés sont corrects avec la bdd
 
         const token = jwt.sign(
@@ -128,6 +137,6 @@ app.post('/api/register', async (req, res) => {
 
 
 
-app.listen(process.env.PORTS, () => {
+app.listen(process.env.PORT, () => {
     console.log('Server up at 9999')
 })
